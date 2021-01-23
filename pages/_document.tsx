@@ -39,6 +39,10 @@ export default class MyDocument extends Document {
         <Head>
           <meta httpEquiv="Content-Type" content="text/html; utf-8" />
           <meta name="robots" content="noodp" />
+          <link
+            rel="icon"
+            href="https://img.icons8.com/wired/100/ffffff/flex-biceps.png"
+          />
         </Head>
         <body>
           <Main />
