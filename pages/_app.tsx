@@ -1,3 +1,4 @@
+import axios from "axios";
 import App from "next/app";
 import Head from "next/head";
 import "../public/styled.css";
@@ -5,6 +6,22 @@ import "../public/styled.css";
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
+    const API_KEY = "AIzaSyBd3K-Y0TPpcid2YXmXnW8DpO3y7_8kS4Y";
+    const channel_id = "UCFMxIgcRu1mbjMg3LnvNHaw";
+
+    async function getVideo() {
+      return await axios
+        .get(
+          `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${channel_id}&part=snippet,id&order=date&maxResults=20`
+        )
+        .then((res: any) => {
+          console.log(res.data.items);
+          return res.data.items;
+        });
+    }
+
+    console.log(getVideo());
+
     return (
       <>
         <Head>
