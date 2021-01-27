@@ -110,7 +110,7 @@ export const Contact = () => {
           />
         </InputWrapper>
         <input type="hidden" name="tomail" value="s22ah261@seinan-gakuin.jp" />
-        <SubmitButton onClick={submitForm}>submit</SubmitButton>
+        <SubmitButton onClick={submitForm}>SUBMIT</SubmitButton>
       </form>
     </Wrapper>
   );
@@ -129,30 +129,31 @@ const InputWrapper = styled.div`
 `;
 
 const Input = styled.input`
-  width: 70%;
+  width: 90%;
   padding: 20px 0;
   text-align: center;
+  font-size: 18px;
   margin: 20px auto;
   border: 2px solid #bbb;
 `;
 
 const Textarea = styled.textarea`
-  width: 70%;
+  width: 90%;
   text-align: center;
   border: 2px solid #bbb;
   margin: 20px auto;
   padding: 30px 0;
+  font-size: 18px;
 `;
 
 const SubmitButton = styled.div`
-  width: 120px;
+  width: 70px;
   margin: 30px auto;
-  height: 50px;
-  line-height: 50px;
+  padding: 25px;
   background-color: #222;
   color: #fff;
   border-radius: 30px;
-  font-size: 20px;
+  font-size: 18;
   cursor: pointer;
   &:hover {
     color: #222;

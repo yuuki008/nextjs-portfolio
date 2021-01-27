@@ -7,7 +7,7 @@ export const Header = () => {
       <HeaderNavWrapper>
         <HeaderNav href="#about">About</HeaderNav>
         <HeaderNav href="#works">Portfolio</HeaderNav>
-        <HeaderNav href="#about">Contact</HeaderNav>
+        <HeaderNav href="#contact">Contact</HeaderNav>
       </HeaderNavWrapper>
       <IconNavWrapper>
         <Icon href="https://twitter.com/ax0kQcEB93ntx6X">

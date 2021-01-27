@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Header } from "./header";
 import { About } from "./about";
 import { Contact } from "./contact";
 import { Work } from "./work";
+import { Seinan } from "./seinan";
+import { Footer } from "./footer";
 import Image from "next/image";
 
-export const home = () => {
+type Props = {
+  videos: any;
+};
+
+export const home: React.FC<Props> = ({ videos }) => {
+  useEffect(() => {
+    console.log(videos);
+  }, []);
   return (
-    <div>
+    <div style={{ margin: 0 }}>
       <HeaderWrapper>
         <div style={{ width: "100%", height: "100vh", position: "absolute" }}>
-          <Image src="/images/kyouto1.jpg" layout="fill" />
+          <Image src="/images/seinan1.jpg" layout="fill" />
         </div>
         <HeaderWrapper2>
           <Header />
@@ -37,10 +46,24 @@ export const home = () => {
         <SectionTitle id="works">PORTFOLIO</SectionTitle>
         <Work />
       </WorkWrapper>
+      <SeinanWrapper>
+        <SectionTitle>
+          SEINAN'S YOUTUBE
+          <ImageWrapper>
+            <a href="https://www.youtube.com/channel/UCFMxIgcRu1mbjMg3LnvNHaw">
+              <img src="https://img.icons8.com/doodle/50/000000/youtube-play--v2.png" />
+            </a>
+          </ImageWrapper>
+        </SectionTitle>
+        <Seinan videos={videos} />
+      </SeinanWrapper>
       <ContactWrapper>
         <SectionTitle id="contact">Contact</SectionTitle>
         <Contact />
       </ContactWrapper>
+      <FooterWrapper>
+        <Footer />
+      </FooterWrapper>
     </div>
   );
 };
@@ -54,7 +77,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const HeaderWrapper2 = styled.div`
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
   height: 100vh;
   position: relative;
 `;
@@ -79,6 +102,7 @@ const SectionTitle = styled.div`
   width: 100%;
   text-align: center;
   margin: 80px 0;
+  position: relative;
 `;
 
 const AboutWrapper = styled.div`
@@ -88,6 +112,26 @@ const AboutWrapper = styled.div`
   flex-direction: column;
 `;
 
+const SeinanWrapper = styled.div`
+  width: 80%;
+  margin: 0 auto 200px auto;
+`;
+
+const ImageWrapper = styled.span`
+  position: absolute;
+  padding-left: 10px;
+`;
+
 const ContactWrapper = styled.div``;
 
-const WorkWrapper = styled.div``;
+const WorkWrapper = styled.div`
+  margin-bottom: 200px;
+`;
+
+const FooterWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+`;

@@ -42,11 +42,6 @@ const WorkDescription = styled.div`
   padding: 30px;
 `;
 
-const Red = styled.a`
-  color: #fa817d;
-  border-style: none;
-`;
-
 const IconWrapper = styled.span`
   position: absolute;
   top: "25px";
