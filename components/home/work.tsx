@@ -29,7 +29,7 @@ export const Work = () => {
 };
 
 const Wrapper = styled.div`
-  width: 1400px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;

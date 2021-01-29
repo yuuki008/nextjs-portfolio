@@ -2,13 +2,16 @@ import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
-export const Seinan = ({ videos }) => {
+export const Seinan = ({ fetch_videos }) => {
   const [more, setMore] = useState(false);
   const handleMore = useCallback(() => {
     setMore(!more);
   }, [more]);
 
-  const viewVideos = more ? videos : videos.slice(0, 3);
+  const viewVideos = more
+    ? fetch_videos.videos
+    : fetch_videos.videos.slice(0, 3);
+
   const button = more ? "CLOSE" : "SEE MORE";
 
   return (
@@ -33,7 +36,9 @@ export const Seinan = ({ videos }) => {
             </VideoWrapper>
           ))}
         </VideosWrapper>
-        <MoreButton onClick={handleMore}>{button}</MoreButton>
+        {fetch_videos.is_fetched && (
+          <MoreButton onClick={handleMore}>{button}</MoreButton>
+        )}
       </MainWrapper>
     </Wrapper>
   );

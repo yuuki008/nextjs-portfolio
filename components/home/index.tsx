@@ -9,18 +9,18 @@ import { Footer } from "./footer";
 import Image from "next/image";
 
 type Props = {
-  videos: any;
+  fetch_videos: any;
 };
 
-export const home: React.FC<Props> = ({ videos }) => {
+export const home: React.FC<Props> = ({ fetch_videos }) => {
   useEffect(() => {
-    console.log(videos);
+    console.log(fetch_videos);
   }, []);
   return (
     <div style={{ margin: 0 }}>
       <HeaderWrapper>
         <div style={{ width: "100%", height: "100vh", position: "absolute" }}>
-          <Image src="/images/seinan1.jpg" layout="fill" />
+          <Image src="/images/training.jpg" layout="fill" />
         </div>
         <HeaderWrapper2>
           <Header />
@@ -55,7 +55,7 @@ export const home: React.FC<Props> = ({ videos }) => {
             </a>
           </ImageWrapper>
         </SectionTitle>
-        <Seinan videos={videos} />
+        <Seinan fetch_videos={fetch_videos} />
       </SeinanWrapper>
       <ContactWrapper>
         <SectionTitle id="contact">Contact</SectionTitle>

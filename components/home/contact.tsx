@@ -64,7 +64,7 @@ export const Contact = () => {
           description,
       };
       const adress =
-        "https://hooks.slack.com/services/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";
+        "https://hooks.slack.com/services/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";
 
       fetch(adress, {
         method: "POST",
