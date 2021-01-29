@@ -36,7 +36,7 @@ export const Seinan = ({ fetch_videos }) => {
             </VideoWrapper>
           ))}
         </VideosWrapper>
-        {fetch_videos.is_fetched && (
+        {fetch_videos.isFetch && (
           <MoreButton onClick={handleMore}>{button}</MoreButton>
         )}
       </MainWrapper>
